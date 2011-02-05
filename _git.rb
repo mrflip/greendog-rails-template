@@ -4,14 +4,54 @@ puts "Initializing new Git repo ...".magenta
 
 remove_file '.gitignore'
 file '.gitignore', <<-CODE.gsub(/^ {2}/, '')
+  ## OS
   .DS_Store
-  .bundle
+  Icon?
+  nohup.out
+  .bak
+
+  ## EDITORS
+  \#*
+  .\#*
+  *~
+  *.swp
+  REVISION
+  TAGS*
+  tmtags
+  *_flymake.*
+  *_flymake
+  *.tmproj
+  .project
+  .settings
   mkmf.log
+
+  ## COMPILED
+  a.out
+  *.o
+  *.pyc
+  *.so
+
+  ## OTHER SCM
+  .bzr
+  .hg
+  .svn
+
+  ## PROJECT::GENERAL
+  coverage
+  rdoc
+  doc
+  pkg
+  .yardoc
+  *private*
+  .bundle
+  db/*.sqlite3
   log/*.log
   tmp/**/*
-  db/*.sqlite3
+  config/database.yml
   public/stylesheets/compiled/*
   public/system/*
+
+  ## PROJECT::SPECIFIC
 CODE
 
 git :init

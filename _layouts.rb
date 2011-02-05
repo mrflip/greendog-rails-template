@@ -10,11 +10,11 @@ HAML
 
 remove_file 'app/views/layouts/_header.html.haml'
 file 'app/views/layouts/_header.html.haml', <<-HAML.gsub(/^ {2}/, '')
-  .title
-    %h1 Header
+  .sitelink
+    %h1= link_to "AppName", '/'
 
-  .logo
-    %h1 Logo goes here
+  .hellobox
+    %span.signup sign up
 HAML
 
 file 'app/views/layouts/_nav.html.haml', <<-HAML.gsub(/^ {2}/, '')
