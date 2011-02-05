@@ -1,0 +1,21 @@
+!!! 5
+-ie_html :class => 'no-js' do
+  = render :partial => 'layouts/head'
+  %body{ :lang => 'en', :class => "#{controller.controller_name}" }
+    #container
+      %header#header
+        .row
+          = render :partial => 'layouts/header'
+      %nav#nav
+        .row
+          = render :partial => 'layouts/nav'
+      #main{ :role => 'main' }
+        .row
+          = render :partial => 'layouts/flashes'
+        -# You MUST enclose your yielded content in at least one .row
+        = yield
+      %footer#footer
+        .row
+          = render :partial => 'layouts/footer'
+    -# Javascript at the bottom for fast page loading
+    = render :partial => 'layouts/javascripts'
