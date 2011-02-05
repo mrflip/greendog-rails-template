@@ -11,18 +11,7 @@ initializer 'app_config.rb' do
 RUBY
 end
 
-file 'config/app_config.yml', <<-RUBY.gsub(/^ {2}/, '')
-  # Application-specific global configuration settings.
-  # These get loaded by config/initializers/app_config.rb and
-  # can be accessed via APP_CONFIG[:param]
+copy_static_file 'config/app_config.yml'
 
-  # Example:
-  #
-  # superuser: mfischer
-  # per_page: 20
-  # array_of_arrays:
-  #   - [key, val]
-  #   - [key2, val2]
-RUBY
-
+git :add => '.'
 git :commit => "-am 'Generated configuration.'"

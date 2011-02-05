@@ -24,3 +24,6 @@ run "#{@rvm} gem install bundler"
 
 # Install all other gems needed from Gemfile
 run "#{@rvm} exec bundle install"
+
+git :add => '.'
+git :commit => "-am 'Generated rvm.'"

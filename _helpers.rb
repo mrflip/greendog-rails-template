@@ -3,37 +3,7 @@
 puts "Creating useful application_helper.rb ...".magenta
 
 remove_file 'app/helpers/application_helper.rb'
-file 'app/helpers/application_helper.rb', <<-RUBY.gsub(/^ {2}/, '')
-  module ApplicationHelper
-
-    # Help individual pages to set their HTML titles
-    def title(text)
-      content_for(:title){ text }
-    end
-
-    # Help individual pages to set their HTML meta descriptions
-    def description(text)
-      content_for(:description){ text }
-    end
-
-    #
-    # Link to a resource by its titleized text
-    #
-    # link_to_rsrc @dataset  => <a href="/datasets/dataset-handle" dataset.title
-    # link_to_rsrc Dataset   => /datasets
-    #
-    def link_to_rsrc rsrc, options={}
-      return '' unless rsrc
-      case rsrc
-      when ActiveRecord::Base then dest = rsrc                        ; text = rsrc.titleize
-      when Class              then dest = url_for(rsrc.to_s.tableize) ; text = rsrc.to_s.titleize.pluralize
-      when Symbol             then dest = rsrc                        ; text = rsrc.to_s.titleize.pluralize
-      else                         dest = rsrc
-      end
-      link_to(text, dest, options)
-    end
-  end
-RUBY
+copy_static_file 'app/helpers/application_helper.rb'
 
 file 'app/helpers/error_messages_helper.rb', <<-RUBY.gsub(/^ {2}/, '')
   module ErrorMessagesHelper
@@ -76,4 +46,5 @@ file 'app/views/shared/_error_messages.html.haml', <<-HAML.gsub(/^ {2}/, '')
           %li= msg
 HAML
 
+git :add => '.'
 git :commit => "-am 'Generated Helpers.'"

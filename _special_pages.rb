@@ -17,4 +17,5 @@ copy_static_file 'app/views/special_pages/homepage.html.haml'
 copy_static_file 'app/views/special_pages/text.html.haml'
 copy_static_file 'app/views/special_pages/grid.html.haml'
 
+git :add => '.'
 git :commit => "-am 'Generated homepage and sample pages to demonstrate grid.'"

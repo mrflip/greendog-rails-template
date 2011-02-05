@@ -21,4 +21,5 @@ RUBY
 
 run "compass init rails -r html5-boilerplate -u html5-boilerplate -x sass -c config/compass.rb --force"
 
+git :add => '.'
 git :commit => "-am 'Generated html5 boilerplate.'"
