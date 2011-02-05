@@ -31,8 +31,9 @@ remove_file "public/javascripts/effects.js"
 remove_file "public/javascripts/prototype.js"
 remove_file "public/javascripts/jrails.js"
 
+apply "#{@partials}/_git.rb"           # commit initial repo
 apply "#{@partials}/_gemfile.rb"
-# apply "#{@partials}/_rvm.rb"           # Must be after gemfile since it runs bundler
+# apply "#{@partials}/_rvm.rb"         # Must be after gemfile since it runs bundler
 apply "#{@partials}/_boilerplate.rb"
 apply "#{@partials}/_grid.rb"          # Must be after boilerplate since it modifies SASS files
 apply "#{@partials}/_stylesheets.rb"   # Must be after boilerplate since it modifies SASS files
@@ -47,8 +48,6 @@ apply "#{@partials}/_friendly_id.rb"
 apply "#{@partials}/_forgery.rb"
 apply "#{@partials}/_special_pages.rb"
 apply "#{@partials}/_devise.rb"
-# Must be last in order to commit initial repository
-apply "#{@partials}/_git.rb"
 
 puts "\n========================================================="
 puts " INSTALLATION COMPLETE!".yellow.bold

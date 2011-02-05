@@ -20,3 +20,5 @@ inject_into_file 'config/application.rb', :before => "  end\nend" do
     config.logger = Logger.new(config.paths.log.first, 50, 1048576)
   RUBY
 end
+
+git :commit => "-am 'Configured Application: no timestamped migrations, log rotation, exclude password_confirmation in filter.'"

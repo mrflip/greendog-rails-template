@@ -14,3 +14,5 @@ generators = <<-RUBY
     end
 RUBY
 application generators
+
+git :commit => "-am 'Generated rspec install.'"

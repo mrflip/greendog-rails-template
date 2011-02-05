@@ -8,3 +8,5 @@ run "#{@rvm} exec rails generate devise User"
 
 # # Run this to also copy in all the views
 # run "#{@rvm} exec rails generate devise:views"
+
+git :commit => "-am 'Generated user auth layer with devise.'"

@@ -75,3 +75,5 @@ file 'app/views/shared/_error_messages.html.haml', <<-HAML.gsub(/^ {2}/, '')
         - target.errors.full_messages.each do |msg|
           %li= msg
 HAML
+
+git :commit => "-am 'Generated Helpers.'"

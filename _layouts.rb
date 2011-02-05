@@ -53,3 +53,5 @@ file 'app/views/layouts/application.html.haml', <<-HAML.gsub(/^ {2}/, '')
       -# Javascript at the bottom for fast page loading
       = render :partial => 'layouts/javascripts'
 HAML
+
+git :commit => "-am 'Generated layouts.'"

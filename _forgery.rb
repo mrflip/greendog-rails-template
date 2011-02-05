@@ -3,3 +3,5 @@
 puts "Setting up forgery ... ".magenta
 
 run "#{@rvm} exec rails generate forgery"
+
+git :commit => "-am 'Generated forgery override dirs.'"

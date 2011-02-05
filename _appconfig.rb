@@ -24,3 +24,5 @@ file 'config/app_config.yml', <<-RUBY.gsub(/^ {2}/, '')
   #   - [key, val]
   #   - [key2, val2]
 RUBY
+
+git :commit => "-am 'Generated configuration.'"
