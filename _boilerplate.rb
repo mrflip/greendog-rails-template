@@ -2,6 +2,8 @@
 
 puts "Setting up HTML5 Boilerplate with HAML, SASS, and Compass ...".magenta
 
+initializer_from_file('sass_config.rb')
+
 file 'config/compass.rb', <<-RUBY.gsub(/^ {2}/, '')
   require 'html5-boilerplate'
 
@@ -20,6 +22,3 @@ file 'config/compass.rb', <<-RUBY.gsub(/^ {2}/, '')
 RUBY
 
 run "compass init rails -r html5-boilerplate -u html5-boilerplate -x sass -c config/compass.rb --force"
-
-git :add => '.'
-git :commit => "-am 'Generated html5 boilerplate.'"

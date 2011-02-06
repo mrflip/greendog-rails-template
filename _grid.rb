@@ -11,6 +11,3 @@ inject_into_file 'app/stylesheets/style.sass', :after => %Q{@import "partials/ex
 end
 
 copy_static_file 'app/stylesheets/partials/_grid.sass'
-
-git :add => '.'
-git :commit => "-am 'Generated HTML5 grid for compass.'"

@@ -24,9 +24,9 @@ file 'Gemfile', <<-RUBY.gsub(/^ {2}/, '')
 
   gem 'chronic'                       # Time parsing
   gem 'will_paginate', '~> 3.0.pre2'  # Pagination of long lists
-  # gem 'devise', '~> 1.1'            # User management
-  # gem 'hpricot'                     # For Devise view generation
-  # gem 'ruby_parser'                 # For Devise view generation
+  gem 'devise', '~> 1.1'            # User management
+  gem 'hpricot'                     # For Devise view generation
+  gem 'ruby_parser'                 # For Devise view generation
 
   # Testing
   group :test do

@@ -52,6 +52,8 @@ file '.gitignore', <<-CODE.gsub(/^ {2}/, '')
   public/system/*
 
   ## PROJECT::SPECIFIC
+  public/stylesheets/style.css
+  public/stylesheets/handheld.css
 CODE
 
 git :init

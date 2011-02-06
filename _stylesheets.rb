@@ -11,6 +11,3 @@ gsub_file 'app/stylesheets/style.sass', %r{@import partials/example}, '//@import
   append_file 'app/stylesheets/style.sass', "@import partials/#{sass_partial}\n"
   file "app/stylesheets/partials/_#{sass_partial}.sass", File.read(File.dirname(__FILE__)+"/files/app/stylesheets/partials/_#{sass_partial}.sass")
 end
-
-git :add => '.'
-git :commit => "-am 'Generated SASS partials.'"
