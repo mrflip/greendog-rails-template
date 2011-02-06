@@ -12,7 +12,7 @@ Dir['db/migrate/*create_users.rb'].each{|old_migration| puts old_migration ; rem
 #
 # Generate User model
 #
-generate "nifty:scaffold User name:string username:string is_local:boolean index show --rspec --haml --skip-migration"
+generate "nifty:scaffold User name:string is_local:boolean index --rspec --haml --skip-migration"
 remove_file 'spec/fixtures/users.yml'
 remove_file 'spec/models/user_spec.rb'
 
@@ -37,7 +37,12 @@ end
 gsub_file        'config/routes.rb', /devise_for :users$/, %q{devise_for :users, :path_names => { :sign_in => 'login', :sign_out => 'logout', :sign_up => 'signup' }}
 
 gsub_file "config/initializers/devise.rb", /# config.password_length = 6\.\.20/, %Q{config.password_length = 4..255}
-gsub_file "config/routes.rb",              /resources :users\n/, %Q{resources :users, :only => [:index, :show]\n}
+gsub_file "config/routes.rb",              /resources :users\n/, %Q{
+  resources :users, :only => [:index]
+  as :user do
+    get "users/:id" => "devise/registrations#edit", :as => :user
+  end
+}
 
 copy_static_file "app/models/user.rb"
 %w[ confirmations/new passwords/edit passwords/new registrations/edit registrations/new sessions/new unlocks/new ].each do |devise_view_file|

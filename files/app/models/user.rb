@@ -9,6 +9,6 @@ class User < ActiveRecord::Base
   attr_accessible :name, :username, :is_local
 
   def titleize
-    email.gsub(/@.*/, "")
+    name
   end
 end
