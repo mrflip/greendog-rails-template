@@ -5,6 +5,11 @@
      @title = text
    end
 
+   # This template will handle its own rows
+   def multirow
+     @multirow = true
+   end
+
    # Help individual pages to set their HTML meta descriptions
    def description(text)
      content_for(:description){ text }

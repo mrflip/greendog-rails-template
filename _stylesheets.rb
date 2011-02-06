@@ -3,7 +3,7 @@
 puts "Creating default stylesheets ...".magenta
 
 remove_file 'app/stylesheets/partials/_example.sass'
-gsub_file 'app/stylesheets/style.sass', %r{//@include html5-boilerplate;}, '@include html5-boilerplate'
+# gsub_file 'app/stylesheets/style.sass', %r{//@include html5-boilerplate;}, '@include html5-boilerplate'
 gsub_file 'app/stylesheets/style.sass', %r{@import partials/example}, '//@import partials/example'
 
 %w[page buttons flashes forms tables].each do |sass_partial|

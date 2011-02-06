@@ -12,8 +12,11 @@
       #main{ :role => 'main' }
         .row
           = render :partial => 'layouts/flashes'
-        -# You MUST enclose your yielded content in at least one .row
-        = yield
+        -if @multirow
+          = yield
+        -else
+          .row
+            = yield
       %footer#footer
         .row
           = render :partial => 'layouts/footer'
