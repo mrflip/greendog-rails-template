@@ -15,6 +15,7 @@
     legend
       padding:            	0 6px
       font-weight:        	bold
+      +font-size(18px)
 
     .form_input
       margin-bottom:      	1em
@@ -63,3 +64,32 @@
         background-color: 	#F8F8E0
         border:           	1px solid #D8D800
         color:            	black
+
+
+!error_alert_color   = #ff6060
+          
+.field_with_errors 
+  padding:              	2px 3px
+  background-color:           	$error_alert_color + #666
+  display:                    	table
+
+#error_explanation 
+  border:                     	2px solid $error_alert_color
+  padding:                    	0 0 10px 7px
+  margin:               	10px 0
+  background-color:           	$error_alert_color + #666
+
+#error_explanation h2 
+  text-align:                 	left
+  font-weight:                	bold
+  font-size:                  	14px    
+  padding:                    	5px 5px 5px 15px
+  margin-left:                	-7px
+  background-color:           	$error_alert_color
+  color:                      	#fff
+
+#error_explanation ul li 
+  font-size:                  	12px
+  list-style:                 	square
+
+  
