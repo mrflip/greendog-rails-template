@@ -39,33 +39,13 @@
     tincidunt consectetur, consectetur ac neque. Vestibulum nec orci eu arcu hendrerit malesuada in vel quam. Fusce
     sollicitudin, nisl vel suscipit facilisis, quam arcu adipiscing diam, nec lacinia arcu elit non lorem. Vestibulum
     ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas sodales metus sit amet varius. Nam euismod
-    bibendum ligula. Nam rhoncus, orci ac fermentum viverra, elit diam ornare neque, vel sodales ante lorem nec eros.
-    Aenean accumsan volutpat diam ac mattis. Praesent et magna mi, eu ornare enim. Nam mi odio, condimentum non convallis
-    eget, vestibulum non lacus. Integer sit amet lorem id ipsum ornare consequat. Integer tortor urna, mollis ullamcorper
-    pellentesque vel, sollicitudin at nisi. Aliquam vitae sapien massa, a feugiat dolor. Aliquam varius euismod lorem,
-    sed egestas nisi ultrices in. Ut commodo orci in urna malesuada tincidunt pellentesque diam blandit. Curabitur in sem
-    a magna consequat porttitor. Morbi elementum egestas turpis sit amet consectetur. Sed velit leo, pretium vel
-    tincidunt consectetur, consectetur ac neque. Vestibulum nec orci eu arcu hendrerit malesuada in vel quam. Fusce
-    sollicitudin, nisl vel suscipit facilisis, quam arcu adipiscing diam, nec lacinia arcu elit non lorem. Vestibulum
-    ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas sodales metus sit amet varius. Nam euismod
-    bibendum ligula. Nam rhoncus, orci ac fermentum viverra, elit diam ornare neque, vel sodales ante lorem nec eros.
-    Aenean accumsan volutpat diam ac mattis. Praesent et magna mi, eu ornare enim. Nam mi odio, condimentum non convallis
-    eget, vestibulum non lacus. Integer sit amet lorem id ipsum ornare consequat. Integer tortor urna, mollis ullamcorper
-    pellentesque vel, sollicitudin at nisi. Aliquam vitae sapien massa, a feugiat dolor. Aliquam varius euismod lorem,
-    sed egestas nisi ultrices in. Ut commodo orci in urna malesuada tincidunt pellentesque diam blandit. Curabitur in sem
-    a magna consequat porttitor. Morbi elementum egestas turpis sit amet consectetur. Sed velit leo, pretium vel
-    tincidunt consectetur, consectetur ac neque. Vestibulum nec orci eu arcu hendrerit malesuada in vel quam. Fusce
-    sollicitudin, nisl vel suscipit facilisis, quam arcu adipiscing diam, nec lacinia arcu elit non lorem. Vestibulum
-    ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
 
   %hr
 
   .buttons
     = link_to 'Cancel Changes', '/', :class => 'button neutral alpha'
     = link_to 'Cancel Changes', '/', :class => 'button normal large'
-    = link_to 'Cancel', '/', :class => 'button warning small'
+    = link_to 'Cancel',         '/', :class => 'button warning small'
     %button{:type => :submit, :class => 'positive', :name => :button, :value => :save} Save Changes
 
   %hr
@@ -74,13 +54,19 @@
     %thead
       %tr
         %th       Col 1
-        %th.td_2  Col 2
+        %th.td_3  Col 2
         %th       Col 3
+        %th.td_6  Col 4
+        %th       Col 5
+        %th       Col 6
     %tbody
       %tr
         %td Cell 1
         %td Cell 2
         %td Cell 3
+        %td Cell 4
+        %td Cell 5
+        %td Cell 6
       %tr
         %td Cell 1
         %td Cell 2 asdffsdf
@@ -89,19 +75,26 @@
         %td Cell 1
         %td Cell 2
         %td Cell 3
+        %td Cell 4
+        %td Cell 5
+        %td Cell 6
 
   %hr
 
   %table.vertical
     %tbody
       %tr
-        %td Row 1
+        %th Row 1
         %td Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas sodales metus sit amet varius. Nam euismod bibendum ligula. Nam rhoncus, orci ac fermentum viverra
       %tr
-        %td Row 2
+        %th Row 2
         %td Aenean aliquet erat at velit pellentesque posuere.
       %tr
-        %td Row 3
+        %th Row 3
+        %td Etiam at dui nunc, in iaculis dolor. Maecenas lorem risus, pellentesque eget convallis et, ornare id elit. Donec porta suscipit tincidunt. Nam quis mauris in augue viverra tempus quis non nibh. Cras porttitor lectus cursus lacus       sagittis non volutpat tortor pharetra. Aliquam ultrices ullamcorper molestie. Integer fringilla nisl vitae justo       tempor semper.
+      %tr
+        %th Row 4
+        %td.td_12 Etiam at dui nunc, in iaculis dolor. Maecenas lorem risus, pellentesque eget convallis et, ornare id elit. Donec porta suscipit tincidunt. Nam quis mauris in augue viverra tempus quis non nibh. Cras porttitor lectus cursus lacus       sagittis non volutpat tortor pharetra. Aliquam ultrices ullamcorper molestie. Integer fringilla nisl vitae justo       tempor semper.
         %td Etiam at dui nunc, in iaculis dolor. Maecenas lorem risus, pellentesque eget convallis et, ornare id elit. Donec porta suscipit tincidunt. Nam quis mauris in augue viverra tempus quis non nibh. Cras porttitor lectus cursus lacus       sagittis non volutpat tortor pharetra. Aliquam ultrices ullamcorper molestie. Integer fringilla nisl vitae justo       tempor semper.
 
   %hr
