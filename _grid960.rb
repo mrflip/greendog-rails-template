@@ -6,6 +6,7 @@ inject_into_file 'app/stylesheets/style.sass', :after => %Q{@import "partials/ex
   <<-SASS.gsub(/^ {4}/, '')
     // Import the custom grid layout
     @import 960/grid
+    @import partials/grid960
 
   SASS
 end

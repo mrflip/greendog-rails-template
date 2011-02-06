@@ -18,7 +18,14 @@ inject_into_file 'config/environments/development.rb', :after => %Q{config.actio
   %Q{config.action_mailer.default_url_options = { :host => 'localhost:3000' }}
 end
 # override user login routes
-gsub_file 'config/routes.rb', /devise_for :users$/, %q{devise_for :users, :path_names => { :sign_in => 'login', :sign_out => 'logout', :sign_up => 'signup' }}
+gsub_file        'config/routes.rb', /devise_for :users$/, %q{devise_for :users, :path_names => { :sign_in => 'login', :sign_out => 'logout', :sign_up => 'signup' }}
+inject_into_file 'config/routes.rb', :before => /\n\s+devise_for :users/ do
+  %Q{
+  get 'users/login'  => 'devise/sessions#new',      :as => :login
+  get 'users/logout' => 'devise/sessions#destroy',  :as => :logout
+  get 'users/signup' => 'devise/registrations#new', :as => :signup
+}
+end
 
 git :add => '.'
 git :commit => "-am 'Generated user auth layer with devise.'"
