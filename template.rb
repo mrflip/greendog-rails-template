@@ -41,21 +41,23 @@ apply "#{@partials}/_git.rb"           # commit initial repo
 apply "#{@partials}/_gemfile.rb"
 # apply "#{@partials}/_rvm.rb"         # Must be after gemfile since it runs bundler
 apply "#{@partials}/_boilerplate.rb"
+git :add => '.'
+git :commit => "-am 'Generated boilerplate.'"
 apply "#{@partials}/_grid.rb"          # Must be after boilerplate since it modifies SASS files
 apply "#{@partials}/_stylesheets.rb"   # Must be after boilerplate since it modifies SASS files
 apply "#{@partials}/_layouts.rb"       # Must be after boilerplate since it modifies HAML files
 git :add => '.'
-git :commit => "-am 'Generated boilerplate, grid, stylesheets and layouts.'"
+git :commit => "-am 'Generated grid, stylesheets and layouts.'"
 apply "#{@partials}/_helpers.rb"
 apply "#{@partials}/_appconfig.rb"
-apply "#{@partials}/_rspec.rb"
-# apply "#{@partials}/_capistrano.rb"
 apply "#{@partials}/_application.rb"
 # Following generators must be after application.rb since they run migrations
-apply "#{@partials}/_friendly_id.rb"
-apply "#{@partials}/_forgery.rb"
 apply "#{@partials}/_special_pages.rb"
-apply "#{@partials}/_devise.rb"
+# apply "#{@partials}/_rspec.rb"
+# apply "#{@partials}/_capistrano.rb"
+# apply "#{@partials}/_friendly_id.rb"
+# apply "#{@partials}/_forgery.rb"
+# apply "#{@partials}/_devise.rb"
 
 puts "\n========================================================="
 puts " INSTALLATION COMPLETE!".yellow.bold

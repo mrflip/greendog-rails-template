@@ -17,6 +17,7 @@ file 'Gemfile', <<-RUBY.gsub(/^ {2}/, '')
   gem 'haml-rails'
   gem 'compass'
   gem 'html5-boilerplate'
+  gem 'compass-960-plugin'
 
   # Development
   gem 'friendly_id', '~> 3.1'         # Human readable URLs
