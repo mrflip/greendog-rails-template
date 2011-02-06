@@ -3,6 +3,9 @@
 puts "Adding password_confirmation to filter_parameters ... ".magenta
 gsub_file 'config/application.rb', /:password\]/, ':password, :password_confirmation]'
 
+puts "Copying in static files"
+copy_static_file "public/favicon.ico"
+
 puts "Turning off timestamped_migrations ...".magenta
 inject_into_file 'config/application.rb', :before => "  end\nend" do
   <<-RUBY

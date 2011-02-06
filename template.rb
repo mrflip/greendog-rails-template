@@ -56,7 +56,7 @@ apply "#{@partials}/_appconfig.rb"
 apply "#{@partials}/_application.rb"
 # Following generators must be after application.rb since they run migrations
 apply "#{@partials}/_special_pages.rb"
-# # apply "#{@partials}/_capistrano.rb"
+# apply "#{@partials}/_capistrano.rb"
 apply "#{@partials}/_rspec.rb"
 apply "#{@partials}/_friendly_id.rb"
 apply "#{@partials}/_forgery.rb"
