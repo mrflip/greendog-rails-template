@@ -7,12 +7,13 @@
 !flash_success_color = #baffba
 
 #flash
-  +col(12)
 
   .notice, .alert, .success
-    border: 1px solid
-    margin: 0 0 4px 0
-    padding: 15px
+    +grid(14)
+    +grid-buffer(1)
+    border:             1px solid
+    margin-bottom:      14px
+    padding:            8px $ninesixty-gutter-width / 2
     +border-radius(2px)
 
   .notice

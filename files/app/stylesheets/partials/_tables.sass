@@ -1,15 +1,18 @@
 // Tables
 
 table.horizontal
-  margin:               	20px
+  // margin:               	20px
   text-align:           	left
-  padding:              	1em
+  // padding:              	1em
   th
     border-bottom:      	2px solid #6678b1
     font-weight:        	bold
-    padding:            	6px 8px
-  td
-    padding:            	6px 8px
+  th, td
+    padding-top:           	6px 
+    padding-bottom:           	6px
+    margin:                     0
+    min-width:                  $ninesixty-grid-width / $ninesixty-columns
+    +clearfix
   tbody
     tr:hover
       background-color: 	#e8f0ff

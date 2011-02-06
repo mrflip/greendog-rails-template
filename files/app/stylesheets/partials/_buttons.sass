@@ -2,10 +2,24 @@
 
 .buttons
   margin: 1em 0
-  button,a.button
+  a.button
+    width:                      ($ninesixty-grid-width / $ninesixty-columns * 3) - $ninesixty-gutter-width - 2
+  button
+    width:                      ($ninesixty-grid-width / $ninesixty-columns * 3) - $ninesixty-gutter-width
+  a.button.small
+    width:                      ($ninesixty-grid-width / $ninesixty-columns * 2) - $ninesixty-gutter-width - 2
+  button.small
+    width:                      ($ninesixty-grid-width / $ninesixty-columns * 2) - $ninesixty-gutter-width
+  button,
+  a.button
     display:               	inline-block
     vertical-align:        	baseline
-    margin:                	0 2px
+    margin:
+      left:               	$ninesixty-gutter-width/2 - 2
+      right:               	$ninesixty-gutter-width/2 - 2
+    padding:
+      top:               	.4em
+      bottom:                   .42em
     outline:               	none
     cursor:                	pointer
     text-align:            	center
@@ -13,7 +27,6 @@
     font:                  	13px/100% Arial, Helvetica, sans-serif
     font-weight:           	bold
     line-height:           	1.45em
-    padding:               	.4em 1.5em .42em
     text-shadow:           	0 1px 1px rgba(0,0,0,.3)
     -webkit-border-radius: 	1em
     -moz-border-radius:    	1em
@@ -26,20 +39,27 @@
     &:active
       position:            	relative
       top:                 	1px
+    &.large
+      font-size:             	16px
+      padding:
+        top:                    .5em
+        bottom:                 .55em
+    &.medium
+      font-size:             	12px
+      padding:
+        top:                      .4em
+        bottom:                   .42em
+    &.small
+      font-size:             	11px
+      padding:
+        top:                      .2em
+        bottom:                   .275em
 
   .bigrounded
     -webkit-border-radius: 	2em
     -moz-border-radius:    	2em
     border-radius:         	2em
-  .large
-    font-size:             	14px
-    padding:               	.5em 2em .55em
-  .medium
-    font-size:             	12px
-    padding:               	.4em 1.5em .42em
-  .small
-    font-size:             	11px
-    padding:               	.2em 1em .275em
+
 
   /* gray
 

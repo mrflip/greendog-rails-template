@@ -46,45 +46,81 @@ input:invalid, textarea:invalid
 body
   background-color:       	white
 
-div#container
-  +grid-system(16)
-  +clearfix
+$ninesixty-columns: 16
+#container
+  +grids
+  +grid-prefixes
+  +grid-suffixes
   +grid-children
-  #header,
-  #footer,
-  #sidebar,
-  #main-content
-    +grid-unit-base
-  #header, #footer
-    +grid-width(24)
-  #header
+  +grid-movements
+  +grid-tds
+  #main, #flash, .box
+    +clearfix
+    +grid-container
+  header
     .sitelink
       +alpha
-      +grid(11,16)
+      +grid(11)
     .hellobox
-      +grid(5,16)
+      +grid(5)
       +omega
   #nav
-    .menu
-      +alpha
-      +grid(11,16)
+    ul.menu
+      +grid(11)
+      +has-children
       .item
-        +grid-width(3)
+        +grid(2)
     .search
-      +grid-width(6)
+      +grid(5)
       +omega
 
-  #footer
+  #main
+    .section
+      +grid(16)
+    .left_column
+      +alpha
+      +grid(11)
+    .right_column
+      +grid(5)
+      +omega
+
+  footer
     .copyright
-      +grid-prefix(9,16)
-      +grid(7,16)
-    
-  
-header#header
+      +grid-prefix(12)
+      +grid(4)
+
+
+#grid
+
+  /* Dimensions - same width as your grid with gutters */
+  width: $ninesixty-grid-width
+
+  /* Grid (centered) */
+  position: absolute
+  top: 0
+  left: 50%
+  margin-left: -480px
+
+  div.vert
+    +grid-width(1)
+    border:             solid darkturquoise
+    border-width:       0 1px
+    margin:
+      left:             $ninesixty-gutter-width / 2 - 1
+      right:            $ninesixty-gutter-width / 2 - 1
+
+  div.horiz
+    height:             15px
+    border-bottom:      1px dotted #aaa
+    margin:             0
+    padding:            0
+
+header
   background-color:       	#cdd9e2
   border-bottom:          	1px solid #4f708b
   color:                  	#444
   padding:                	15px 0
+  height:                       48px
   .sitelink,
   .hellobox
     a
@@ -92,34 +128,36 @@ header#header
     h1
       +font-size(32px)
 
-nav#nav
+#nav
   background-color:       	#456989
   border-top:             	1px solid #87abc8
   border-bottom:          	1px solid #e0e8f0
   +linear-gradient(color-stops(#7599b9, #456989))
   color:                  	#fff
   padding:                	10px 0
+  margin-bottom:                10px
   .search
     text-align:           	right
+header, #nav
   ul, li
-    margin:                     0
     list-style:                 none
     list-style-image:           none
-    
-div#main
+  li
+    background-color: red
+
+#main
   background-color:       	white
   color:                  	#444
-  border-top:             	1px solid #c0d0e0
+  // border-top:             	1px solid #c0d0e0
   padding:                	15px 0
-  min-height:             	   700px
-  div.content
-    +col(12)
-  div.main
-    +col(9)
-  div.aside
-    +col(3)
+  min-height:             	700px
 
-footer#footer
+  ul
+    :margin
+      :top                      8px
+      :bottom                      8px
+
+footer
   border-top:             	1px solid #b2b9bf
   border-bottom:          	1px solid #c2c9cf
   background-color:       	#d0d9e0
