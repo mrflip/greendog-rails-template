@@ -1,0 +1,10 @@
+
+=grid-buffer($n, $cols: $ninesixty-columns)
+  margin-left: ($ninesixty-grid-width / $cols * $n)
+=has-children
+  +alpha
+  +omega
+=grid-tds($cols: $ninesixty-columns, $gutter-width: $ninesixty-gutter-width)
+  @for $n from 1 through $cols
+    .td_#{$n}
+      +grid-width($n, $cols, $gutter-width)

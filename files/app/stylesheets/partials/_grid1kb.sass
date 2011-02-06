@@ -28,7 +28,7 @@ $width     = $columns * ($col_width + $gutter)
 
 =append($n: 1)
   margin-right: $n * ($col_width + $gutter) + $margin
-
+    
 // Add the .row class to a div to start a new row. Can be nested
 
 .row
@@ -37,6 +37,66 @@ $width     = $columns * ($col_width + $gutter)
 .row .row
   +inner_row
 
+// were in _page.sass
+
+header#header
+  background-color:       	#cdd9e2
+  border-bottom:          	1px solid #4f708b
+  color:                  	#444
+  padding:                	15px 0
+  .sitelink
+    +col(9)
+    a
+      text-decoration:    	none
+    h1
+      +font-size(32px)
+  .hellobox
+    +col(3)
+
+nav#nav
+  background-color:       	#456989
+  border-top:             	1px solid #87abc8
+  border-bottom:          	1px solid #e0e8f0
+  +linear-gradient(color-stops(#7599b9, #456989))
+  color:                  	#fff
+  padding:                	10px 0
+  .menu
+    +col(9)
+    .item
+      +col(1)
+  .search
+    +col(3)
+    text-align:           	right
+  ul, li
+    margin:                     0
+    list-style:                 none
+    list-style-image:           none
+    
+div#main
+  background-color:       	white
+  color:                  	#444
+  border-top:             	1px solid #c0d0e0
+  padding:                	15px 0
+  min-height:             	   700px
+  div.content
+    +col(12)
+  div.main
+    +col(9)
+  div.aside
+    +col(3)
+
+footer#footer
+  border-top:             	1px solid #b2b9bf
+  border-bottom:          	1px solid #c2c9cf
+  background-color:       	#d0d9e0
+  color:                  	#333
+  padding:                	20px 0
+  .copyright
+    +col(2)
+    +prepend(10)
+    +font-size(10px)
+  
+    
 // Some sample classes to get started with columns. You should create
 // your own semantic classes (e.g. section.welcome, div.blog, div.post...)
 

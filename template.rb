@@ -43,9 +43,11 @@ apply "#{@partials}/_gemfile.rb"
 apply "#{@partials}/_boilerplate.rb"
 git :add => '.'
 git :commit => "-am 'Generated boilerplate.'"
-apply "#{@partials}/_grid.rb"          # Must be after boilerplate since it modifies SASS files
-apply "#{@partials}/_stylesheets.rb"   # Must be after boilerplate since it modifies SASS files
-apply "#{@partials}/_layouts.rb"       # Must be after boilerplate since it modifies HAML files
+# Stylesheet code must be after boilerplate since it modifies SASS files
+# apply "#{@partials}/_grid1kb.rb"
+apply "#{@partials}/_grid960.rb"
+apply "#{@partials}/_stylesheets.rb"
+apply "#{@partials}/_layouts.rb"
 git :add => '.'
 git :commit => "-am 'Generated grid, stylesheets and layouts.'"
 apply "#{@partials}/_helpers.rb"

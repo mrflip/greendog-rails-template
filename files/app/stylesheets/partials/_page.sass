@@ -5,7 +5,7 @@
 //-----------------------------------
 
 h1, h2, h3, h4, h5, h6
-  font-weight: normal
+  font-weight:          	normal
 
 h1
   +font-size(24px)
@@ -20,7 +20,7 @@ h4
   +font-size(15px)
 
 strong, th
-  font-weight: bold
+  font-weight:            	bold
 
 small
   // Use font-size mixin to convert to percentage for YUI
@@ -37,50 +37,81 @@ input:invalid, textarea:invalid
 
 .no-boxshadow input:invalid,
 .no-boxshadow textarea:invalid
-  background-color: #f0dddd
+  background-color:       	#f0dddd
 
 //-----------------------------------
 // HTML5 Boilerplate + http://www.1kbgrid.com/ Grid Layout
 //-----------------------------------
 
 body
-  background-color: white
+  background-color:       	white
 
 div#container
+  +grid-system(16)
+  +clearfix
+  +grid-children
+  #header,
+  #footer,
+  #sidebar,
+  #main-content
+    +grid-unit-base
+  #header, #footer
+    +grid-width(24)
+  #header
+    .sitelink
+      +alpha
+      +grid(11,16)
+    .hellobox
+      +grid(5,16)
+      +omega
+  #nav
+    .menu
+      +alpha
+      +grid(11,16)
+      .item
+        +grid-width(3)
+    .search
+      +grid-width(6)
+      +omega
 
+  #footer
+    .copyright
+      +grid-prefix(9,16)
+      +grid(7,16)
+    
+  
 header#header
-  background-color: #cdd9e2
-  border-bottom: 1px solid #4f708b
-  color: #444
-  padding: 15px 0
-  .sitelink
-    +col(9)
+  background-color:       	#cdd9e2
+  border-bottom:          	1px solid #4f708b
+  color:                  	#444
+  padding:                	15px 0
+  .sitelink,
+  .hellobox
     a
-      text-decoration: none
+      text-decoration:    	none
     h1
       +font-size(32px)
-  .hellobox
-    +col(3)
 
 nav#nav
-  background-color: #456989
-  border-top: 1px solid #87abc8
-  border-bottom: 1px solid #e0e8f0
+  background-color:       	#456989
+  border-top:             	1px solid #87abc8
+  border-bottom:          	1px solid #e0e8f0
   +linear-gradient(color-stops(#7599b9, #456989))
-  color: #fff
-  padding: 10px 0
-  .menu
-    +col(9)
+  color:                  	#fff
+  padding:                	10px 0
   .search
-    +col(3)
-    text-align: right
-
+    text-align:           	right
+  ul, li
+    margin:                     0
+    list-style:                 none
+    list-style-image:           none
+    
 div#main
-  background-color: white
-  color: #444
-  border-top: 1px solid #c0d0e0
-  padding: 15px 0
-  min-height:    700px
+  background-color:       	white
+  color:                  	#444
+  border-top:             	1px solid #c0d0e0
+  padding:                	15px 0
+  min-height:             	   700px
   div.content
     +col(12)
   div.main
@@ -89,16 +120,13 @@ div#main
     +col(3)
 
 footer#footer
-  border-top: 1px solid #b2b9bf
-  border-bottom: 1px solid #c2c9cf
-  background-color: #d0d9e0
-  color: #333
-  padding: 20px 0
+  border-top:             	1px solid #b2b9bf
+  border-bottom:          	1px solid #c2c9cf
+  background-color:       	#d0d9e0
+  color:                  	#333
+  padding:                	20px 0
   .copyright
-    +col(2)
-    +prepend(10)
-    p
-      +font-size(10px)
+    +font-size(10px)
 
 //-----------------------------------
 // Custom Application Styles
