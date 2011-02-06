@@ -22,3 +22,7 @@ gsub_file        'config/routes.rb', /devise_for :users$/, %q{devise_for :users,
 
 git :add => '.'
 git :commit => "-am 'Generated user auth layer with devise.'"
+
+%w[ confirmations/new passwords/edit passwords/new registrations/edit registrations/new sessions/new unlocks/new ].each do |devise_view_file|
+  copy_static_file "app/views/devise/#{devise_view_file}.html.haml"
+end
