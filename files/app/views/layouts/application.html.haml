@@ -1,16 +1,16 @@
 !!! 5
--ie_html :class => 'no-js' do
-  = render :partial => 'layouts/head'
-  %body{ :lang => 'en', :class => "#{controller.controller_name}" }
-    #container
-      %header#header
-        = render :partial => 'layouts/header'
-      %nav#nav
-        = render :partial => 'layouts/nav'
-      = render :partial => 'layouts/flashes'
-      #main{ :role => 'main' }
+%html{ :lang => 'en' }
+  = render :partial => 'layouts/htmlhead'
+
+  %body{ :class => "#{controller.controller_name}" }
+    = render :partial => 'layouts/topbar'
+    = render :partial => 'layouts/flashes'
+    
+    .container-fluid
+      = render :partial => 'layouts/sidebar'
+      
+      .content#main{ :role => 'main' }
         = yield
-      %footer#footer
-        = render :partial => 'layouts/footer'
-    -# Javascript at the bottom for fast page loading
+
+      = render :partial => 'layouts/footer'
     = render :partial => 'layouts/javascripts'
