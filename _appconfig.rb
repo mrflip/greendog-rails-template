@@ -4,7 +4,7 @@
 puts "Creating custom app configuration hash ...".magenta
 
 copy_static_file 'config/initializers/app_config.rb'
-copy_static_file 'config/app_config.yml'
+copy_static_file 'config/app_config.yaml'
 
 git :add => '.'
 git :commit => "-am 'Generated configuration.'"

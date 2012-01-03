@@ -9,6 +9,8 @@ file 'Gemfile', <<-RUBY.gsub(/^ {2}/, '')
   gem   'rails',               "~> 3.2.0.rc1"
   gem   'unicorn',             "~> 4.1"
 
+  gem   'configliere',         "~> 0.4"
+
   # Database
   # gem 'mysql2'
   gem 'sqlite3'

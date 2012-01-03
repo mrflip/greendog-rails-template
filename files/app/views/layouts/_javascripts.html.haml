@@ -1,13 +1,13 @@
 - if true # cache(:action_suffix => :layout_html_head) do
-  - if APP_CONFIG[:google_api_key].present?
+  - if Settings.google_api_key.present?
     -# Grab Google CDN's jQuery
     = javascript_include_tag "//www.google.com/jsapi?key=#{google_api_key}"
     :javascript
-      google.load("jquery",    APP_CONFIG[:jquery_version]);
-      google.load("jquery-ui", APP_CONFIG[:jquery_ui_version]);
+      google.load("jquery",    Settings.jquery_version);
+      google.load("jquery-ui", Settings.jquery_ui_version);
   - else
-    = javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/#{APP_CONFIG[:jquery_version]}/jquery.min.js"
-    = javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/#{APP_CONFIG[:jquery_ui_version]}/jquery-ui.min.js"
+    = javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/#{Settings.jquery_version}/jquery.min.js"
+    = javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/#{Settings.jquery_ui_version}/jquery-ui.min.js"
   -# fall back to local jQuery if necessary
   :javascript
     !window.jQuery && document.write(unescape('%3Cscript src="/assets/jquery.min.js"%3E%3C/script%3E'))
@@ -17,9 +17,9 @@
   = javascript_include_tag('hashgrid') if Rails.env.development?
   = yield :javascripts
   
-  - if APP_CONFIG[:google_analytics_id].present?
+  - if Settings.google_analytics_id.present?
     :javascript
-      var _gaq = [['_setAccount', '#{APP_CONFIG[:google_analytics_id]}'], ['_trackPageview']];
+      var _gaq = [['_setAccount', '#{Settings.google_analytics_id}'], ['_trackPageview']];
       (function(d, t) {
         var g = d.createElement(t),
             s = d.getElementsByTagName(t)[0];
