@@ -44,16 +44,12 @@ file '.gitignore', <<-CODE.gsub(/^ {2}/, '')
   .yardoc
   *private*
   .bundle
+  .vendor
   db/*.sqlite3
-  log/*.log
+  log/*.log*
   tmp/**/*
   config/database.yml
-  public/stylesheets/compiled/*
-  public/system/*
 
-  ## PROJECT::SPECIFIC
-  public/stylesheets/style.css
-  public/stylesheets/handheld.css
 CODE
 
 git :init
