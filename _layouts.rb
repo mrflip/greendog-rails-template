@@ -2,14 +2,25 @@
 
 puts "Creating default layout ...".magenta
 
-remove_file 'app/views/layouts/_footer.html.haml'
-copy_static_file 'app/views/layouts/_footer.html.haml'
+# we do the jquery including
+gsub_file( 'app/assets/javascripts/application.js', /.*require jquery\s+\n?/, '')
 
-remove_file 'app/views/layouts/_header.html.haml'
-copy_static_file 'app/views/layouts/_header.html.haml'
+remove_file      'app/assets/stylesheets/application.css'
 
-copy_static_file 'app/views/layouts/_nav.html.haml'
+%w[
+  app/views/layouts/application.html.haml
+  app/views/layouts/_flashes.html.haml
+  app/views/layouts/_footer.html.haml
+  app/views/layouts/_htmlhead.html.haml
+  app/views/layouts/_javascripts.html.haml
+  app/views/layouts/_sidebar.html.haml
+  app/views/layouts/_topbar.html.haml
+  app/assets/stylesheets/application.sass
+  app/assets/stylesheets/page.sass
+].each do |asset|
+  remove_file      asset
+  copy_static_file asset
+end
 
-# This needs to be kept up to date as the boilerplate and sporkd gem get updated
-remove_file 'app/views/layouts/application.html.haml'
-copy_static_file 'app/views/layouts/application.html.haml'
+git :add => '.'
+git :commit => "-am 'layout files.'"

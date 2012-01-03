@@ -8,6 +8,7 @@ inject_into_file 'config/routes.rb', :after => ".routes.draw do\n" do
 
     match 'admin/demo'           => 'misc#demo'
     match 'admin/bootstrap_demo' => 'misc#bootstrap_demo'
+
   RUBY
 end
 

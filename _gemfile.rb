@@ -60,7 +60,6 @@ file 'Gemfile', <<-RUBY.gsub(/^ {2}/, '')
     gem 'awesome_print'
     gem 'pry'
   end
-
 RUBY
 
 git :commit => "-am 'Gemfile.'"

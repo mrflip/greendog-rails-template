@@ -35,8 +35,8 @@ inject_into_file 'config/application.rb', :before => "  end\nend" do
   RUBY
 end
 
-gsub_file('config/environments/development.rb',
-  /^\s*# config.cache_store = :mem_cache_store.*/,
+inject_into_file 'config/environments/development.rb',
+  :after => "config.action_controller.perform_caching = false.*\n" do
 <<-RUBY
   # # mimic production caching if env var is set
   # if ENV['MIMIC_PRODUCTION_CACHING']
@@ -44,9 +44,10 @@ gsub_file('config/environments/development.rb',
   #  config.cache_store = :dalli_store
   # end
 RUBY
-  )
+end
 
-inject_into_file 'config/environments/development.rb', :before => "  # Print deprecation notices" do
+inject_into_file 'config/environments/development.rb',
+  :before => "  # Print deprecation notices" do
 <<-RUBY
 
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
