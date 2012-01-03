@@ -25,6 +25,8 @@ def initializer_from_file filename
   initializer(filename){ File.read(File.join(@files_path, 'config/initializers', filename)) }
 end
 
+apply "#{@partials}/_git.rb"           # commit initial repo
+
 
 puts "\nRemoving unnecessary files ... ".magenta
 remove_file "README.rdoc"
@@ -33,14 +35,13 @@ remove_file "app/assets/images/rails.png"
 remove_file "app/views/layouts/application.html.erb"
 remove_file "public/favicon.ico"
 run "rm -rf test"
+# git :add => '.'
+# git :commit => "-am 'removed training wheels and unnecessary files'"
 
-apply "#{@partials}/_git.rb"           # commit initial repo
 apply "#{@partials}/_gemfile.rb"
 apply "#{@partials}/_rvm.rb"         # Must be after gemfile since it runs bundler
 
-# apply "#{@partials}/_boilerplate.rb"
-# git :add => '.'
-# git :commit => "-am 'Generated boilerplate.'"
+apply "#{@partials}/_boilerplate.rb"
 
 # # Stylesheet code must be after boilerplate since it modifies SASS files
 # # apply "#{@partials}/_grid1kb.rb"
